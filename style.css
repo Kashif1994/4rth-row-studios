@@ -648,11 +648,14 @@ input[type="submit"]
 }
 
 .footer .grid{
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: .7fr 1fr 1fr;
     justify-content: space-between;
     align-content: center;
 }
 
+.footer .grid > *:last-child{
+    justify-self: center;
+}
 
 .footer .grid > *:nth-child(2){
     justify-self: flex-start;
@@ -722,6 +725,7 @@ input[type="submit"]
     .footer .grid > *:first-child{
         justify-self: center;
     }
+
 }
 
 
