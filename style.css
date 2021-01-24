@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 
 :root{
-    --primary-color: #dd1c1a;
+    --primary-color: #AD0226;
     --secondary-color: #081c15;
     --accent-black: #1a191d;
     --accent-blue:#131420;
@@ -15,6 +15,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    background: var(--primary-color);
 }
 
 
@@ -325,8 +326,9 @@ img{
 
 
 /*Showcase*/
+
 .showcase-hero{
-    height: 100vh;
+    height: 80vh;
     color: var(--secondary-color);
 }
 
