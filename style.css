@@ -1,0 +1,860 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+
+:root{
+    --primary-color: #dd1c1a;
+    --secondary-color: #081c15;
+    --accent-black: #1a191d;
+    --accent-blue:#131420;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container{
+    max-width: 1100px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.container2{
+    width: 90%;
+}
+
+.hidden{
+    visibility: hidden;
+    height: 0;
+}
+.absolute{
+    position: absolute;
+}
+
+.relative{
+    position: relative;
+}
+
+ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+h1{
+    font-size: 5.5rem;
+    font-weight: 900;
+}
+
+h3{
+    font-size:20px;
+}
+
+.logo{
+    width: 110px;
+}
+/*margin along y-axis*/
+.my-1{
+    margin: 1rem 0;
+}
+
+.my-2{
+    margin: 1.5rem 0;
+}
+
+.my-3{
+    margin: 2rem 0;
+}
+
+.my-4{
+    margin: 3rem 0;
+}
+
+/*margin all along*/
+.m-1{
+    margin: 1rem;
+}
+
+.m-2{
+    margin: 1.5rem;
+}
+
+.m-3{
+    margin: 2rem;
+}
+
+.m-4{
+    margin: 3rem;
+}
+
+/*padding along y-axis*/
+.py-1{
+    padding: 1rem 0;
+}
+
+.py-2{
+    padding: 1.5rem 0;
+}
+
+.py-3{
+    padding: 2rem 0;
+}
+
+.py-4{
+    padding: 3rem 0;
+}
+
+/*padding all along*/
+.p-1{
+    padding: 1rem;
+}
+
+.p-2{
+    padding: 1.5rem;
+}
+
+.p-3{
+    padding: 2rem;
+}
+
+.p-4 {
+    padding: 3rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.text-center{
+    text-align: center;
+}
+
+p{
+    line-height: 1.5;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+button{
+    font-size: 1.2rem;
+    margin: 5px;
+    justify-self: center;
+}
+
+button i{
+    margin-left: 10px;
+}
+
+img{
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #fff;
+}
+
+.btn:hover{
+    transform: scale(0.98);
+}
+
+.showcase-video-btn{
+    position: relative;
+    justify-self: end;
+    z-index: 10;
+}
+
+.circle-video{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.circle-video:hover{
+    cursor: pointer;
+}
+.circle-video::before,
+.circle-video::after{
+    content: "";
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
+.circle-video::before{
+    content: "\f04b";
+    font-family: "Font Awesome 5 Pro", serif;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+}
+
+.circle-video::after{
+    display: grid;
+    place-items: center;
+    background: #fb8500;
+    z-index: -1;
+    animation: pulse 1000ms infinite;
+
+}
+
+
+@keyframes pulse {
+    0%{
+        transform: scale(0.9);
+        opacity: 0.75;
+    }
+    100%{
+        transform: scale(1.45);
+        opacity: 0;
+    }
+}
+
+.navbar .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar ul{
+    display: flex;
+}
+
+.navbar a{
+    font-weight: 700;
+    color: white;
+}
+
+.navbar a:hover{
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+
+.navbar.work{
+    /*background: var(--secondary-color);*/
+    background: url(images/bg1.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar a.no-border{
+    border: none;
+}
+
+.wrapper{
+    /*background: var(--primary-color);*/
+    background: url(images/bg1.png) no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+/*video*/
+.trailer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10000;
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.trailer.active{
+    visibility: visible; !important;
+    opacity: 1; !important;
+}
+
+.trailer video{
+    position: relative;
+    max-width: 900px;
+    outline: none;
+}
+
+.close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    filter: invert(1);
+    max-width: 45px;
+}
+@media(max-width: 991px){
+
+    .trailer video{
+        max-width: 90%;
+    }
+}
+
+
+/*Showcase*/
+.showcase-hero{
+    height: 100vh;
+    color: var(--secondary-color);
+}
+
+.showcase-hero .grid{
+    grid-template-columns: 2.5fr .5fr;
+    height: 80%;
+}
+
+.showcase-text h1,h2,h3,p{
+    color: white;
+}
+
+/*What we do*/
+.what-we-do{
+    background: var(--accent-blue);
+    color: white;
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.what-we-do .container{
+    height: 100%;
+    padding: 2rem;
+}
+
+.what-we-do .rightText{
+    margin-left: 5rem;
+}
+
+.what-we-do .leftText p{
+    text-transform: uppercase;
+}
+
+
+/*mosaic-portfolio*/
+.mosaic-portfolio{
+    background: var(--accent-black);
+    position: relative;
+    text-align: center;
+}
+
+.mosaic-portfolio img{
+    width: 100%;
+}
+
+.mosaic-portfolio .container2{
+    width: 75%;
+}
+
+.mosaic-portfolio .grid{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    /*grid-template-rows: repeat(2, 1fr);*/
+    position: relative;
+    top: -120px;
+}
+
+
+
+.mosaic-portfolio .grid > *:first-child{
+    grid-row: 1 / span 2;
+}
+
+.mosaic-portfolio .view-more{
+    position: relative;
+    top: -85px;
+}
+
+/*.mosaic-portfolio .grid > *:last-child{*/
+/*    grid-column: 2 / span 3;*/
+/*}*/
+
+/*work-of-fields*/
+.work-of-fields .container{
+    max-width: 100%;
+}
+
+.work-of-fields .grid{
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.work-of-fields .fields{
+    position: relative;
+    width: 100%;
+}
+
+.work-of-fields img{
+    display: block;
+    width: 100%;
+}
+
+.work-of-fields .bannerLink{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.work-of-fields a{
+    background: rgba(0,0,0,0.7);
+}
+
+
+
+/* CONTACT FORM */
+
+.contact-form{
+    background: var(--accent-black);
+}
+
+.contact-form.contact-form-work{
+    background: var(--accent-blue);
+}
+
+.contact-form .container{
+
+    width: 80%;
+    padding: 20px;
+
+}
+
+.contact-form h2{
+
+    width: 100%;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-form .eachRow{
+
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.contact-form .eachRow .col{
+
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 10px;
+    transition: 0.5s;
+
+}
+
+
+.contact-form .eachRow .inputBox{
+
+    position: relative;
+    width: 100%;
+    height: 40px;
+
+}
+
+.contact-form .eachRow .inputBox input,
+.contact-form .eachRow .inputBox.textarea textarea
+{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 10px;
+    z-index: 1;
+    color: #ffffff;
+}
+
+.contact-form .eachRow .inputBox .text{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+    font-size: medium;
+    font-weight: 600;
+    color: gray;
+}
+
+.contact-form .eachRow .inputBox input:focus + .text,
+.contact-form .eachRow .inputBox input:valid + .text
+
+{
+
+    top: -35px;
+    left: -10px;
+
+}
+
+.contact-form .eachRow .inputBox .line{
+
+    position: absolute;
+    bottom:0;
+    display: block;
+    width: 90%;
+    height: 2px;
+    background: #262529;
+    transition:0.5s;
+    border-radius:2px;
+    pointer-events: none;
+
+}
+
+.contact-form .eachRow .inputBox input:focus ~ .line,
+.contact-form .eachRow .inputBox input:valid ~ .line{
+
+    height: 100%;
+}
+
+.contact-form .eachRow .inputBox.textarea{
+
+    position: relative;
+    width: 100%;
+    height:100px;
+    padding: 10px 0;
+}
+
+.contact-form .eachRow .inputBox.textarea textarea{
+
+    height: 100%;
+    resize: none;
+}
+
+.contact-form .eachRow .inputBox textarea:focus + .text,
+.contact-form .eachRow .inputBox textarea:valid + .text{
+
+    top: -35px;
+    left: -10px;
+
+}
+
+.contact-form .eachRow .inputBox textarea:focus ~ .line,
+.contact-form .eachRow .inputBox textarea:valid ~ .line{
+
+    height: 100%;
+}
+
+input[type="submit"]
+{
+
+    border: none;
+    padding: 7px 35px;
+    cursor: pointer;
+    outline: none;
+    background: #AD0226;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 2px;
+
+}
+
+/* CONTACT FORM END */
+
+
+
+/*work html*/
+.work-portfolio{
+
+    background: var(--accent-black);
+}
+.work-portfolio .flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.work-portfolio .flex ul{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+.work-portfolio .flex ul li{
+    padding: 5px;
+    font-weight: bold;
+    /*min-width: 100px;*/
+    text-align: center;
+    cursor: pointer;
+}
+
+.work-portfolio .flex ul li.active{
+    border-bottom: 2px solid white;
+}
+.work-portfolio .grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    max-width: 95%;
+}
+
+/*footer*/
+.footer{
+    background: var(--secondary-color);
+}
+
+.footer .grid{
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-content: center;
+}
+
+
+.footer .grid > *:nth-child(2){
+    justify-self: flex-start;
+}
+
+.footer .grid .contact ul li{
+    margin: 1rem 0;
+}
+
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+
+
+/* Tablets and Under*/
+@media(max-width: 868px){
+    /*Showcase*/
+    .showcase-hero .grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    /*mosaic-portfolio*/
+    .mosaic-portfolio .grid{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: minmax(150px,auto);
+        position: relative;
+        top: -120px;
+    }
+
+    .mosaic-portfolio .grid > *:first-child{
+        /*grid-row: 1 / span 2;*/
+    }
+
+    /*Fields of work*/
+    .work-of-fields .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    /*work portfolio*/
+    .work-portfolio .grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20px;
+        max-width: 90%;
+    }
+    .work-portfolio .flex ul li{
+        margin: 10px 0;
+    }
+
+    /*footer*/
+    .footer .grid{
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        align-content: center;
+    }
+    .footer .grid > *:first-child{
+        justify-self: center;
+    }
+}
+
+
+
+/*For devices under 500px*/
+
+@media(max-width: 500px){
+
+   .navbar .container :nth-child(1) {order: 2;}
+
+    .navbar .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-height: 35vh;
+    }
+    /*logo*/
+    .navbar .container :nth-child(2){
+        grid-row: 1;
+        grid-column: 1 / span 2;
+        justify-self: center;
+        margin-top: -15px;
+    }
+    /*work*/
+    .navbar .container :nth-child(3){
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: center;
+    }
+    /*contact us*/
+    .navbar .container :nth-child(1){
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+    }
+
+
+    /*Showcase*/
+    .showcase-hero .grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1{
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+
+    /*mosaic-portfolio*/
+    .mosaic-portfolio .grid{
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        /*grid-template-rows: repeat(2, 1fr);*/
+        position: relative;
+        top: -120px;
+    }
+
+    .mosaic-portfolio .grid > *:first-child{
+        grid-row: 1 / span 2;
+    }
+
+    /*What-we-do*/
+    .what-we-do{
+        background: var(--accent-blue);
+        color: white;
+        min-height: 450px;
+    }
+
+    .what-we-do .container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .what-we-do .rightText {
+        margin-left: 0;
+        margin-top: 6rem;
+    }
+
+
+    .what-we-do .leftText p{
+        text-transform: uppercase;
+    }
+
+    .text-main h3{
+        text-transform: uppercase;
+    }
+
+
+/*Fields of work*/
+    .work-of-fields .grid{
+        grid-template-columns: 1fr;
+    }
+
+    /*work portfolio*/
+    .work-portfolio .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        max-width: 90%;
+    }
+
+    .work-portfolio .flex ul{
+        display: flex;
+        flex: 1;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        /*max-width: 1000px;*/
+        flex-wrap: wrap;
+        margin: 2rem;
+    }
+
+    .work-portfolio .flex ul li{
+        margin: 10px 0;
+    }
+
+    /*footer*/
+    .footer .grid{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .footer .grid > *:nth-child(2){
+        justify-self: center;
+    }
+}
