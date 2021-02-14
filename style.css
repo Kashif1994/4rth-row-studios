@@ -317,6 +317,8 @@ img{
     filter: invert(1);
     max-width: 45px;
 }
+
+
 @media(max-width: 991px){
 
     .trailer video{
@@ -640,6 +642,11 @@ input[type="submit"]
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     max-width: 95%;
+}
+
+.products .itemBox{
+    background: #C0C0C0;
+    height: 95%;
 }
 
 /*footer*/
