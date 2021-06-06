@@ -41,6 +41,8 @@
                 <li class="list" data-filter="social-media">Social Media</li>
                 <li class="list" data-filter="amazon">Amazon A+ Content</li>
                 <li class="list" data-filter="book-covers">Book Covers</li>
+                <li class="list" data-filter="m-graphics">Motion Graphics</li>
+                <li class="list" data-filter="3D">3D</li>
             </ul>
             <div class="products grid">
                 <div class="itemBox book-covers"><img src="images/book-covers/book-cover1.jpg" loading="lazy" alt=""></div>
@@ -107,6 +109,62 @@
                 <div class="itemBox amazon"><img src="images/amazon/amazon-14.jpg" loading="lazy" alt=""></div>
                 <div class="itemBox amazon"><img src="images/amazon/amazon-18.jpg" loading="lazy" alt=""></div>
                 <div class="itemBox amazon"><img src="images/amazon/amazon-19.jpg" loading="lazy" alt=""></div>
+                <div class="itemBox amazon"><img src="images/amazon/amazon-20.jpg" loading="lazy" alt=""></div>
+
+                <div class="itemBox m-graphics"> <video poster="/images/thumbnail/video1.jpg" src="videos/video-skipping-rope.mp4" muted ></video></div>
+                <div class="itemBox m-graphics"> <video poster="/images/thumbnail/video2.jpg" src="videos/video-yoga-ball.mp4" muted></video></div>
+                <div class="itemBox m-graphics"> <video poster="/images/thumbnail/video3.jpg" src="videos/video-yoga-mat.mp4" muted></video></div>
+
+                <div class="itemBox 3D"><img src="images/3D/3d-1.jpg" loading="lazy" alt=""></div>
+                <div class="itemBox 3D"><img src="images/3D/3d-2.jpg" loading="lazy" alt=""></div>
+                <div class="itemBox 3D"><img src="images/3D/3d-3.jpg" loading="lazy" alt=""></div>
+                
+                
+
+
+
+                <!-- <div class="g-video">
+                    <video src="videos/video-skipping-rope.mp4" controls="true" muted></video>
+                    <i class="fal fa-times-circle fa-2x close" onclick="toggle2();"></i>
+                </div> -->
+
+                <script>
+                    var video = document.querySelectorAll('video')
+
+                    video.forEach(play => play.addEventListener('click', () => {
+
+                        play.classList.toggle('active');
+
+                        if(play.paused){
+                            play.play();
+                    
+                        }else{
+                            play.pause();
+                            play.currentTime = 0;
+                        }
+                        
+                        
+
+                    }))
+                
+                   
+                    // function toggle(){
+                    // var mGraphics = document.querySelector(".g-video")
+                    // var video = document.querySelector("video")
+                    // mGraphics.classList.toggle("active")
+                    // video.play();
+                    // video.currentTime = 0;
+                    //  }
+                    // function toggle2(){
+                    // var mGraphics = document.querySelector(".g-video")
+                    // var video = document.querySelector("video")
+                    // mGraphics.classList.toggle("active")
+                    // video.pause();
+                    // video.currentTime = 0;
+                    //  }
+
+                </script>
+                
             </div>
             <div class="my-4"></div>
         </div>
